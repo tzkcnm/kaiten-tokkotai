@@ -1,0 +1,62 @@
+body {
+	background-color: #1a1a1a;
+	color: #FFF;
+	font-family : serif, Arial,'ＭＳ 明朝',sans-serif ;
+}
+
+#title{
+	color: #FFF;
+	width: 1200px;
+	height: 800px;
+	font-size: 30px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+ul.kaitentai {
+   margin:0;
+   padding:0;
+}
+
+ul.kaitentai li {
+   float: left;
+   list-style: none;
+}
+
+/* モダンブラウザ（Firefox Opera Safari）対策 */
+ul.kaitentai:after{
+   content: ".";
+   display: block;
+   height: 0;
+   clear: both;
+   visibility: hidden;
+   font-size: 0;
+}
+
+/* Win版IE7とMac版IE5対策 */
+ul.kaitentai{
+   display: inline-block;
+}
+
+/* Win版IE5および6対策 */
+/* Hides from IE-mac \*/
+* html ul.kaitentai{
+   height: 1px;
+}
+
+ul.kaitentai{
+   display: block;
+}
+
+a { text-decoration: none;}
+
+a:hover { text-decoration: none;}
+
+a:link{ color: #FFF; }
+
+a:visited{ color: #FFF; }
+
+a:hover{ color: #a9a9a9; }
+
+a:active{ color: #696969; }

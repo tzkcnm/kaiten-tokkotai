@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>回天特別攻撃隊</title>
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'intro/kaiten.css' %}"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+ 	$('#title').hide().fadeIn(4000);
+ 	$('.kaitentai').hide().delay(2000).fadeIn(2000);
+});
+</script>
+</head>
+<body>
+<div align="center">
+<div id="title">回天特別攻撃隊<br><span style="font-size: 20px;">− 戦没搭乗員 −</span></div>
+<ul class="kaitentai">
+{% for team in teams %}
+<li><a href="./index/{{ team.url }}">{{ team.name }}</a></li>
+{% if forloop.counter == 11 %}
+</ul>
+<ul class="kaitentai">
+{% endif %}
+{% if forloop.counter == 21 %}
+</ul>
+<ul class="kaitentai">
+{% endif %}
+{% endfor %}
+</ul>
+</div>
+</body>
+</html>

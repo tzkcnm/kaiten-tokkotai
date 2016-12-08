@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>回天特別攻撃隊 - {{ name }}</title>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'intro/kaiten.css' %}"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+ 	$('h2').hide().fadeIn(2500);
+ 	$('h4').hide().fadeIn(2500);
+ 	$('#members').hide().delay(1000).fadeIn(1500);
+ 	$('.button').hide().delay(1000).fadeIn(5000);
+});
+</script>
+</head>
+<body>
+<div style="text-align: center;">
+<br>
+<h2>{{ name }}<h2>
+<h4>{{ subtitle }}</h4>
+<br>
+<div id="members">
+{% for member in members %}
+<a href="{{ member.url }}">{{ member.name }}</a><br>
+{% endfor %}
+</div>
+<br>
+<div class="button">
+<a href="../../top" class="btn">TOP</a>
+</div>
+</div>
+</body>
+</htmL>

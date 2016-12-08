@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{{ teamName }} - {{ name }}</title>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'intro/kaiten.css' %}"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+	$('#words').hide().fadeIn(1500).delay(2500).fadeOut(1500);
+ 	$('h3').hide().delay(5500).fadeIn(3000);
+ 	$('table').hide().delay(6000).fadeIn(1500);
+ 	$('.button').hide().delay(6000).fadeIn(5000);
+});
+</script>
+</head>
+<body>
+<div style="text-align: center;">
+<br>
+<div id="words"><h2>{{ words }}</h2></div>
+<h3>{{ name }}</h3><br>
+<table align="center" border=0>
+<tr>
+<td valign="top">【出身】</td>
+<td>{{ hometown }}</td>
+</tr>
+<tr>
+<td valign="top">【経歴】</td>
+<td>{{ career }}</td>
+</tr>
+<tr>
+<td valign="top">【生年月日】</td>
+<td>{{ birthday }}</td>
+</tr>
+<tr>
+<td valign="top">【享年】</td>
+<td>{{ deathofage }}歳</td>
+</tr>
+<tr>
+<td valign="top">【出撃記録】</td>
+<td><pre style="text-align: left;">
+{{ sortie }}</pre></td>
+</tr>
+</table>
+<br>
+<div class="button">
+<a href="../../index/{{ url }}" class="btn">BACK</a>
+</div>
+</div>
+</body>
+</html>
